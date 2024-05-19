@@ -13,7 +13,7 @@ exec(`cd ${backendPath} && npm install`, (err, stdout, stderr) => {
   console.log(stdout);
 
   // Start backend server with pm2
-  exec(`cd ${backendPath} && pm2 start server.js`, (err, stdout, stderr) => {
+  exec(`cd ${backendPath} && npm start server.js`, (err, stdout, stderr) => {
     if (err) {
       console.error(`Error starting backend server with pm2: ${err}`);
       return;
