@@ -12,6 +12,15 @@ this app currently if not mistaken should be run pretty easily with the followin
 
 To run the whole project and install everything needed via npm and npx, including the backend server.js and frontend npm, you can follow these general steps:
 
+### NEW METHOD
+```bash
+node index.js
+```
+
+
+Below are old methods
+
+
 1. Clone the project repository from a version control system like GitLab, GitHub, or Bitbucket.
 
 2. Navigate to the project directory in your terminal.
