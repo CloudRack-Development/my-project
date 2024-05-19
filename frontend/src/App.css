@@ -160,17 +160,16 @@ body {
 
 /* Modal content */
 .modal-content {
-  background-color: #1a1a1a;
+  background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
-  border-radius: 10px;
+  border: 1px solid #888;
   width: 80%;
-  color: #ffffff; /* Set text color to white */
 }
 
 /* Close button */
 .close {
-  color: #aaaaaa;
+  color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -178,64 +177,12 @@ body {
 
 .close:hover,
 .close:focus {
-  color: #ffffff; /* Change color on hover/focus */
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-/* Close button circle */
-.close-circle {
-  background-color: #444444;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: 0;
-  margin-top: -10px;
-}
-
-/* Media query for mobile responsiveness */
-@media only screen and (max-width: 600px) {
-  .product-table th,
-  .product-table td {
-    font-size: 12px;
-    word-break: break-all; /* Break long words to fit on small screens */
-  }
-
-  .product-title {
-    font-size: 1rem;
-  }
-
-  .product-description {
-    font-size: 0.9rem;
-  }
-
-  .purchase-button,
-  .description-button {
-    font-size: 12px;
-  }
-
-  .product-table tr {
-    display: block; /* Change table rows to block level for mobile */
-    border: 2px solid #ffffff; /* Add border around each row */
-    margin-bottom: 10px; /* Add margin between rows */
-  }
-
-  .product-table th,
-  .product-table td {
-    display: block; /* Change table cells to block level for mobile */
-    text-align: left;
-    border: none; /* Remove border between cells */
-    padding: 8px; /* Adjust padding for better spacing */
-  }
-
-  .product-table th {
-    background-color: #1a1a1a;
-    font-size: 14px;
-    font-weight: bold;
-    color: #ffffff;
-  }
+/* Green color for visited links */
+a:visited {
+  color: green;
 }
