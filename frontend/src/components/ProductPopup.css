@@ -15,12 +15,12 @@
 /* Modal content */
 .modal-content {
   background-color: #1a1a1a;
-  margin: 10% auto; /* Center vertically and add some top margin */
+  margin: 5% auto; /* Center vertically and add some top margin */
   padding: 20px;
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
   max-width: 800px; /* Ensure a maximum width */
-  max-height: 80%; /* Ensure the popup fits within the screen height */
+  max-height: 80vh; /* Ensure the popup fits within the screen height */
   border: 2px solid #00ff00; /* Fallout-inspired green border */
   color: #ffffff; /* Set text color to white */
   overflow: auto; /* Enable scrolling when content is too large */
@@ -93,4 +93,30 @@
 
 .purchase-button:hover {
   background-color: #444444;
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+    padding: 10px;
+  }
+
+  .product-title {
+    font-size: 1.2rem;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+  }
+
+  .purchase-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .close-button {
+    font-size: 24px;
+  }
 }
