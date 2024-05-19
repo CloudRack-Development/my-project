@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import ProductPopup from './components/ProductPopup.js';
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -25,7 +26,12 @@ const App = () => {
 
     // Function to handle showing description for a product
     const handleDescription = (uniqid) => {
-        setSelectedProduct(uniqid === selectedProduct ? null : uniqid);
+        setSelectedProduct(uniqid);
+    };
+
+    // Function to handle clearing the selected product
+    const handleCloseDescription = () => {
+        setSelectedProduct(null);
     };
 
     // Function to handle clearing the search term
@@ -41,7 +47,7 @@ const App = () => {
     return (
         <div className="App">
             <div className="navbar">
-                <h1 className="company-title">Your Company Name</h1>
+                <h1 className="company-title">RayDaAsians's Store</h1>
                 <div className="search-container">
                     <input
                         className="search-bar"
@@ -64,17 +70,17 @@ const App = () => {
                     <table className="product-table">
                         <thead>
                             <tr>
-                                <th>Title</th>
                                 <th>Price</th>
-                                <th>Action</th>
+                                <th>Product Name</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {filteredProducts.map(product => (
                                 <React.Fragment key={product.uniqid}>
                                     <tr>
-                                        <td>{product.title}</td>
                                         <td>${product.price}</td>
+                                        <td>{product.title}</td>
                                         <td>
                                             <button
                                                 data-sellix-product={product.uniqid}
@@ -96,15 +102,16 @@ const App = () => {
                                             </button>
                                         </td>
                                     </tr>
-                                    {selectedProduct === product.uniqid && (
-                                        <tr>
-                                            <td colSpan="3">{product.description}</td>
-                                        </tr>
-                                    )}
                                 </React.Fragment>
                             ))}
                         </tbody>
                     </table>
+                )}
+                {selectedProduct && (
+                    <ProductPopup
+                        product={products.find(product => product.uniqid === selectedProduct)}
+                        onClose={handleCloseDescription}
+                    />
                 )}
             </header>
         </div>
