@@ -16,7 +16,10 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.0",
-    "axios" : "*",
-    "cors" : "*"
+    "axios": "*",
+    "cors": "*"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7"
   }
 }
