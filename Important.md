@@ -40,8 +40,9 @@ npm install
 ```
 
 8. Start the frontend development server:
-
+```bash
 npm start
+```
 These steps will install the necessary dependencies for both the backend and frontend,
 and then start the servers for both components. Make sure to replace backend and frontend with the actual names of your backend and frontend directories,
 if they are different. Also, ensure that your backend and frontend scripts for starting the servers are correctly configured in your package.json files.
