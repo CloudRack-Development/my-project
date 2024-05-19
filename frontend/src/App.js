@@ -14,7 +14,7 @@ const App = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('https://opulent-space-potato-x59w4gg7w45jhp5q-5000.app.github.dev/api/Products');
+                const response = await axios.get('https://119f8499-cddf-4dd6-afd6-c0339ccdd724-00-3bswnx6vny50p.spock.replit.dev:3000/api/Products');
                 console.log('Response:', response.data);
                 setProducts(response.data);
             } catch (error) {
