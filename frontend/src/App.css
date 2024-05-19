@@ -1,51 +1,189 @@
-.App {
-  text-align: center;
-}
+/* App.css */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-ul {
-  list-style-type: none;
+/* Body background inspired by Fallout 76 */
+body {
+  background-color: #0d0d0d;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  margin: 0;
   padding: 0;
 }
 
-li {
-  margin: 20px 0;
-  padding: 20px;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  width: 80%;
-  max-width: 600px;
-  text-align: left;
+/* Navigation bar */
+.navbar {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: center;
 }
 
-h2 {
-  margin: 0 0 10px;
+/* Company title */
+.company-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
 }
 
-p {
-  margin: 0 0 20px;
+/* Search bar container */
+.search-bar-container {
+  display: flex;
+  align-items: center;
 }
 
-button {
-  background-color: #61dafb;
+/* Search bar */
+.search-bar {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
   border: none;
-  color: #282c34;
-  padding: 10px 20px;
+  border-radius: 5px;
   font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
-button:hover {
-  background-color: #21a1f1;
+/* Clear button */
+.clear-button {
+  background-color: #5c5c5c;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-button:hover {
+  background-color: #444444;
+}
+
+/* Container holding the products */
+.product-table-container {
+  margin: 20px;
+  overflow-x: auto;
+}
+
+/* Product table */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #ffffff; /* Add border around the table */
+}
+
+/* Table header */
+.product-table th {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 2px solid #ffffff; /* Add bottom border to header row */
+}
+
+/* Table header text */
+.product-table th {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Table rows */
+.product-table tr {
+  background-color: #222222;
+}
+
+/* Table cells */
+.product-table td {
+  padding: 10px;
+  border-bottom: 1px solid #444444; /* Add bottom border to each cell */
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Product title */
+.product-title {
+  font-size: 1.2rem;
+}
+
+/* Product description */
+.product-description {
+  font-size: 1rem;
+}
+
+/* Purchase button */
+.purchase-button {
+  padding: 8px 16px;
+  background-color: #5c5c5c;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.purchase-button:hover {
+  background-color: #444444;
+}
+
+/* Description button */
+.description-button {
+  padding: 8px 16px;
+  background-color: #5c5c5c;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  margin-left: 5px;
+}
+
+.description-button:hover {
+  background-color: #444444;
+}
+
+/* Media query for mobile responsiveness */
+@media only screen and (max-width: 600px) {
+  .product-table th,
+  .product-table td {
+    font-size: 12px;
+    word-break: break-all; /* Break long words to fit on small screens */
+  }
+
+  .product-title {
+    font-size: 1rem;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+  }
+
+  .purchase-button,
+  .description-button {
+    font-size: 12px;
+  }
+
+  .product-table tr {
+    display: block; /* Change table rows to block level for mobile */
+    border: 2px solid #ffffff; /* Add border around each row */
+    margin-bottom: 10px; /* Add margin between rows */
+  }
+
+  .product-table th,
+  .product-table td {
+    display: block; /* Change table cells to block level for mobile */
+    text-align: left;
+    border: none; /* Remove border between cells */
+    padding: 8px; /* Adjust padding for better spacing */
+  }
+
+  .product-table th {
+    background-color: #1a1a1a;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+  }
 }
