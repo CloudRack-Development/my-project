@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'; // Import BrowserRouter, Link, Route, Switch, and useHistory
 import './App.css';
 import ProductPopup from './components/ProductPopup.js';
+import AboutUs from './components/AboutUs';
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -45,81 +47,91 @@ const App = () => {
     );
 
     return (
-        <div className="App">
-            <nav className="navbar">
-                <h1 className="company-title">RayDaAsians's Store</h1>
-                <div className="search-container">
-                    <input
-                        className="search-bar"
-                        type="text"
-                        placeholder="Search products..."
-                        value={searchTerm}
-                        onChange={e => setSearchTerm(e.target.value)}
-                    />
-                    {searchTerm && (
-                        <button className="clear-search" onClick={handleClearSearch}>
-                            X
-                        </button>
-                    )}
-                </div>
-                <a href="/">Home</a> {/* Regular anchor tag for internal link */}
-                <a href="https://discord.com/invite/AdtreC4yk4" target="_blank" rel="noopener noreferrer">Discord</a> {/* Regular anchor tag for external link */}
-                <a href="https://raydaasian.mysellix.io/contact" target="_blank" rel="noopener noreferrer">Contact Me</a> {/* Regular anchor tag for external link */}
-            </nav>
-            <main>
-                <header className="App-header">
-                    {error ? (
-                        <div>Error: {error}</div>
-                    ) : (
-                        <table className="product-table">
-                            <thead>
-                                <tr>
-                                    <th>Price</th>
-                                    <th>Product Name</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {filteredProducts.map(product => (
-                                    <React.Fragment key={product.uniqid}>
-                                        <tr>
-                                            <td>${product.price}USD</td>
-                                            <td>{product.title}</td>
-                                            <td>
-                                                <button
-                                                    data-sellix-product={product.uniqid}
-                                                    className="purchase-button"
-                                                    type="button"
-                                                    onClick={() => window.Sellix.pay({
-                                                        product_id: product.uniqid,
-                                                        quantity: 1,
-                                                        returnUrl: window.location.href
-                                                    })}
-                                                >
-                                                    Purchase
-                                                </button>
-                                                <button
-                                                    className="description-button"
-                                                    onClick={() => handleDescription(product.uniqid)}
-                                                >
-                                                    Description
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </React.Fragment>
-                                ))}
-                            </tbody>
-                        </table>
-                    )}
-                    {selectedProduct && (
-                        <ProductPopup
-                            product={products.find(product => product.uniqid === selectedProduct)}
-                            onClose={handleCloseDescription}
+        <Router forceRefresh={true}> {/* Pass forceRefresh prop with value true to enable automatic page refresh */}
+            <div className="App">
+                <nav className="navbar">
+                    <h1 className="company-title">RayDaAsians's Store</h1>
+                    <div className="search-container">
+                        <input
+                            className="search-bar"
+                            type="text"
+                            placeholder="Search products..."
+                            value={searchTerm}
+                            onChange={e => setSearchTerm(e.target.value)}
                         />
-                    )}
-                </header>
-            </main>
-        </div>
+                        {searchTerm && (
+                            <button className="clear-search" onClick={handleClearSearch}>
+                                X
+                            </button>
+                        )}
+                    </div>
+                    <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
+                    <a href="https://discord.com/invite/AdtreC4yk4" target="_blank" rel="noopener noreferrer" style={{ marginRight: '10px' }}>Discord</a>
+                    <a href="https://raydaasian.mysellix.io/contact" target="_blank" rel="noopener noreferrer" style={{ marginRight: '10px' }}>Contact Me</a>
+                    <Link to="/about">About Me</Link>
+                </nav>
+                <main>
+                    <Switch>
+                        <Route exact path="/">
+                            <header className="App-header">
+                                {error ? (
+                                    <div>Error: {error}</div>
+                                ) : (
+                                    <table className="product-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Price</th>
+                                                <th>Product Name</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {filteredProducts.map(product => (
+                                                <React.Fragment key={product.uniqid}>
+                                                    <tr>
+                                                        <td>${product.price}USD</td>
+                                                        <td>{product.title}</td>
+                                                        <td>
+                                                            <button
+                                                                data-sellix-product={product.uniqid}
+                                                                className="purchase-button"
+                                                                type="button"
+                                                                onClick={() => window.Sellix.pay({
+                                                                    product_id: product.uniqid,
+                                                                    quantity: 1,
+                                                                    returnUrl: window.location.href
+                                                                })}
+                                                            >
+                                                                Purchase
+                                                            </button>
+                                                            <button
+                                                                className="description-button"
+                                                                onClick={() => handleDescription(product.uniqid)}
+                                                            >
+                                                                Description
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </React.Fragment>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                )}
+                                {selectedProduct && (
+                                    <ProductPopup
+                                        product={products.find(product => product.uniqid === selectedProduct)}
+                                        onClose={handleCloseDescription}
+                                    />
+                                )}
+                            </header>
+                        </Route>
+                        <Route path="/about">
+                            <AboutUs />
+                        </Route>
+                    </Switch>
+                </main>
+            </div>
+        </Router>
     );
 };
 

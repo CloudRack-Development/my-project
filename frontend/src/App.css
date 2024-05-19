@@ -21,6 +21,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+  color: #00ff00; /* Fallout-inspired green color for the title */
 }
 
 /* Search bar container */
@@ -57,6 +58,17 @@ body {
   background-color: #444444;
 }
 
+/* Navigation links */
+.navbar a {
+  color: #00ff00; /* Fallout-inspired green color for the links */
+  text-decoration: none;
+  margin: 0 10px; /* Add spacing between the links */
+}
+
+.navbar a:hover {
+  color: #00cc00; /* Darker green on hover */
+}
+
 /* Container holding the products */
 .product-table-container {
   margin: 20px;
@@ -67,7 +79,7 @@ body {
 .product-table {
   width: 100%;
   border-collapse: collapse;
-  border: 2px solid #ffffff; /* Add border around the table */
+  border: 2px solid #00ff00; /* Add Fallout-inspired green border around the table */
 }
 
 /* Table header */
@@ -76,12 +88,7 @@ body {
   padding: 10px;
   text-align: left;
   font-size: 14px;
-  border-bottom: 2px solid #ffffff; /* Add bottom border to header row */
-}
-
-/* Table header text */
-.product-table th {
-  font-weight: bold;
+  border-bottom: 2px solid #00ff00; /* Add green bottom border to header row */
   color: #ffffff;
 }
 
@@ -93,7 +100,7 @@ body {
 /* Table cells */
 .product-table td {
   padding: 10px;
-  border-bottom: 1px solid #444444; /* Add bottom border to each cell */
+  border-bottom: 1px solid #444444;
   font-size: 14px;
   color: #ffffff;
 }
@@ -160,16 +167,17 @@ body {
 
 /* Modal content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #1a1a1a;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border-radius: 10px;
   width: 80%;
+  color: #ffffff; /* Set text color to white */
 }
 
 /* Close button */
 .close {
-  color: #aaa;
+  color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -177,12 +185,64 @@ body {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #ffffff; /* Change color on hover/focus */
   text-decoration: none;
   cursor: pointer;
 }
 
-/* Green color for visited links */
-a:visited {
-  color: green;
+/* Close button circle */
+.close-circle {
+  background-color: #444444;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: -10px;
+}
+
+/* Media query for mobile responsiveness */
+@media only screen and (max-width: 600px) {
+  .product-table th,
+  .product-table td {
+    font-size: 12px;
+    word-break: break-all; /* Break long words to fit on small screens */
+  }
+
+  .product-title {
+    font-size: 1rem;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+  }
+
+  .purchase-button,
+  .description-button {
+    font-size: 12px;
+  }
+
+  .product-table tr {
+    display: block; /* Change table rows to block level for mobile */
+    border: 2px solid #00ff00; /* Add green border around each row */
+    margin-bottom: 10px; /* Add margin between rows */
+  }
+
+  .product-table th,
+  .product-table td {
+    display: block; /* Change table cells to block level for mobile */
+    text-align: left;
+    border: none; /* Remove border between cells */
+    padding: 8px; /* Adjust padding for better spacing */
+  }
+
+  .product-table th {
+    background-color: #1a1a1a;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+  }
 }

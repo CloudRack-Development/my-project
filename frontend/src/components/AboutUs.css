@@ -1,0 +1,49 @@
+/* AboutUs.css */
+
+.about-container {
+  background-color: #1a1a1a; /* Background color matching the site's theme */
+  border: 2px solid #00ff00; /* Fallout-inspired green border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  margin: 20px; /* Space around the container */
+  margin-top: 40px; /* Extra space at the top to avoid touching the navbar */
+  color: #ffffff; /* White text color */
+  text-align: center; /* Center the text */
+}
+
+.about-title {
+  font-size: 2rem; /* Larger font size for the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.about-description {
+  font-size: 1.2rem; /* Slightly larger font size for descriptions */
+  margin-bottom: 10px; /* Space below each description */
+}
+
+.eth-address {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the address and button */
+  align-items: center; /* Center items vertically */
+  margin-top: 20px; /* Space above the ETH address section */
+}
+
+.eth-address-text {
+  background-color: #333333; /* Dark background for the ETH address text */
+  padding: 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  margin-right: 10px; /* Space to the right of the text */
+}
+
+.copy-button {
+  background-color: #00ff00; /* Fallout-inspired green background */
+  color: #000000; /* Black text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the button */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.copy-button:hover {
+  background-color: #00cc00; /* Darker green on hover */
+}

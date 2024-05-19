@@ -1,92 +1,96 @@
 /* ProductPopup.css */
 
-/* Modal */
-.modal {
-    display: block;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(13, 13, 13, 0.8); /* Background color inspired by Fallout 76 */
-  }
-  
-  /* Modal content */
-  .modal-content {
-    background-color: #1a1a1a; /* Background color inspired by Fallout 76 */
-    margin: 15% auto;
-    padding: 20px;
-    border: 2px solid #ffffff; /* Add border around modal content */
-    width: 80%;
-  }
-  
-  /* Close button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #ffffff; /* Change close button color on hover or focus */
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* Product title */
-  .product-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffffff; /* Text color for product title */
-    margin-bottom: 10px; /* Add margin at bottom of title */
-  }
-  
-  /* Product description */
-  .product-description {
-    font-size: 1rem;
-    color: #ffffff; /* Text color for product description */
-  }
-  
-  /* Purchase button */
-  .purchase-button {
-    padding: 8px 16px;
-    background-color: #5c5c5c;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border: none;
-  }
-  
-  .purchase-button:hover {
-    background-color: #444444;
-  }
-  
-  /* Additional styles as needed */
-  /* ProductPopup.css */
+/* Modal overlay */
+.modal-overlay {
+  display: block;
+  position: fixed;
+  z-index: 1000; /* Ensures it is above other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly darker overlay */
+}
 
 /* Modal content */
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    position: relative; /* Set position to relative */
-  }
-  
-  /* Purchase button */
-  .purchase-button {
-    position: absolute; /* Set position to absolute */
-    bottom: 20px; /* Position button at the bottom */
-    left: 50%; /* Center button horizontally */
-    transform: translateX(-50%); /* Center button horizontally */
-  }
-  
+  background-color: #1a1a1a;
+  margin: 10% auto; /* Center vertically and add some top margin */
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px; /* Ensure a maximum width */
+  max-height: 80%; /* Ensure the popup fits within the screen height */
+  border: 2px solid #00ff00; /* Fallout-inspired green border */
+  color: #ffffff; /* Set text color to white */
+  overflow: auto; /* Enable scrolling when content is too large */
+}
+
+/* Close button */
+.close-button {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #ffffff; /* Change color on hover/focus */
+  text-decoration: none;
+}
+
+/* Close button circle */
+.close-button-circle {
+  background-color: #444444;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: -10px;
+}
+
+/* Product details */
+.product-details {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Product title */
+.product-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00ff00; /* Fallout-inspired green color for the product title */
+}
+
+/* Product description */
+.product-description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Purchase button */
+.purchase-button {
+  padding: 10px 20px;
+  background-color: #5c5c5c;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  display: inline-block;
+}
+
+.purchase-button:hover {
+  background-color: #444444;
+}
